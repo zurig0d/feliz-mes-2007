@@ -1,0 +1,119 @@
+:root{
+  --bg1: #ff758c;
+  --bg2: #ff7eb3;
+  --card-bg: rgba(0,0,0,0.15);
+  --text-color: #fff;
+  --accent: #ffd1e6;
+}
+
+.card {
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  max-width: 520px;
+  width: 100%;
+  margin: 32px auto;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.title { margin: 6px 0 12px; font-size: 1.5rem; }
+
+.figure { margin: 0 auto 12px; }
+
+.photo {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  object-fit: cover;
+}
+
+.figcaption { font-size: 0.85rem; color: rgba(255,255,255,0.95); margin-top: 8px; }
+
+.heart { font-size: 2.6rem; animation: latido 1s infinite; margin: 8px 0; }
+
+@keyframes latido { 0% { transform: scale(1); } 50% { transform: scale(1.18); } 100% { transform: scale(1); } }
+
+.paragraph { font-size: 1.05rem; line-height: 1.4; margin: 8px 0; }
+
+.controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: rgba(0,0,0,0.18);
+  padding: 6px 8px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.controlBtn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.controlBtn:focus { outline: 2px solid rgba(255,255,255,0.6); border-radius: 6px; }
+
+.volumeLabel { display: inline-flex; align-items: center; }
+
+.volume {
+  width: 80px;
+  cursor: pointer;
+  appearance: none;
+  background: rgba(255,255,255,0.2);
+  height: 6px;
+  border-radius: 6px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.45));
+  z-index: 9999;
+}
+
+.overlayContent {
+  background: rgba(255,255,255,0.06);
+  padding: 20px 28px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.playNow {
+  margin-top: 12px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.playNow:focus { outline: 2px solid rgba(255,255,255,0.6); }
+
+@media (max-width: 420px) {
+  .card { padding: 18px; margin: 18px; border-radius: 12px; }
+  .photo { max-width: 100%; border-radius: 10px; }
+  .controls { top: 10px; right: 8px; padding: 6px; }
+  .volume { width: 56px; }
+}
